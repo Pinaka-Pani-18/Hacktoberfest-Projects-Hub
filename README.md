@@ -10,7 +10,7 @@ Hacktoberfest Projects Hub is an open-source platform dedicated to curating and 
 
 - [Getting Started](#getting-started)
 - [Key Features](#key-features)
-- [Why Hacktoberfest Projects Hub?](#why-Hacktoberfest Projects Hub)
+- [Why Hacktoberfest Projects Hub?](#why-Hacktoberfest-Projects-Hub)
 - [Contributing](#contributing)
 - [Community](#community)
 - [License](#license)
