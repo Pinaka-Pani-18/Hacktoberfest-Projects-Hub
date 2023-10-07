@@ -1,6 +1,6 @@
 # Hacktoberfest Projects Hub
 
-![Hacktoberfest Projects Hub Logo](url-to-your-logo.png)
+![Hacktoberfest Projects Hub Logo]("./src/assets/logo_github_project_hub.png")
 
 **Welcome to Hacktoberfest Projects Hub!** 🎉
 
