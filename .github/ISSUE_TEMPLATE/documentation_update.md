@@ -1,7 +1,7 @@
 ---
-name: Documentation Update
+name: 📄 Documentation Update
 about: Suggest updates or improvements to project documentation
-title: "[DOCS] - "
+title: "📄 [DOCS] - "
 ---
 
 **Description**

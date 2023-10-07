@@ -1,7 +1,7 @@
 ---
-name: Enhancement Request
+name: ✨ Enhancement Request
 about: Request an enhancement or improvement to an existing feature
-title: "[ENHANCEMENT] - "
+title: "✨ [ENHANCEMENT] - "
 ---
 
 **Describe the Enhancement**

@@ -1,7 +1,7 @@
 ---
-name: Question
+name: ❓ Question
 about: Ask a question or seek clarification
-title: "[QUESTION] - "
+title: "❓ [QUESTION] - "
 ---
 
 **Question**
