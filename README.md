@@ -47,7 +47,6 @@ We welcome contributions from developers of all backgrounds and experience level
 
 Join our growing community and connect with developers from around the world:
 
-- [Discussion Forums](url-to-discussion-forums)
 - [Chat Rooms](url-to-chat-rooms)
 
 ## License
