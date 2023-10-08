@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+}
+
+:root {
+    --contributor-width: 200px;
+}
+
+h1.contributors-container-heading {
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;
+}
+
+div.contributors-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-evenly;
+    gap: calc(var(--contributor-width) / 3);
+}
+
+div.contributor {
+    cursor: pointer;
+    width: var(--contributor-width);
+    transition: all 0.25s cubic-bezier(0.17, 0.67, 0.57, 1.59);
+}
+
+div.contributor:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+        rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+div.contributor p {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+div.contributor img {
+    width: var(--contributor-width);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: calc(var(--contributor-width) / 2);
+}
