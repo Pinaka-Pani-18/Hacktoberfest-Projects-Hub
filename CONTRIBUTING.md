@@ -7,18 +7,21 @@ Before you start, please take a moment to read this guide to understand how you 
 ## How to Contribute
 
 1. **Fork the Repository:** Click the "Fork" button on the top right corner of this repository. This will create a copy of the project in your GitHub account.
+<img src="/src/images/fork.png">
 
 2. **Clone the Repository:** Clone the forked repository to your local machine using the following command (replace `[your-username]` with your GitHub username):
 
    ```sh
    git clone https://github.com/[your-username]/HacktoberfestProjectsHub.git
    ```
+<img src="/src/images/clone.png">
 
 3. **Create a Branch:** Create a new branch for your contributions:
 
    ```sh
    git checkout -b feature/your-feature-name
    ```
+<img src="/src/images/branch.png">
 
 4. **Make Changes:** Make your contributions to the project. You can add new features, fix bugs, improve documentation, or suggest enhancements.
 
@@ -27,6 +30,7 @@ Before you start, please take a moment to read this guide to understand how you 
    ```sh
    git commit -m "Add feature/fix/enhancement: Description of your changes"
    ```
+<img src="/src/images/commit.png">
 
 6. **Push Changes:** Push your changes to your forked repository:
 
@@ -34,11 +38,17 @@ Before you start, please take a moment to read this guide to understand how you 
    git push origin feature/your-feature-name
    ```
 
+<img src="/src/images/commit.png">
+
 7. **Submit a Pull Request:** Open a Pull Request (PR) to the `main` branch of the original repository. In the PR description, explain the purpose and details of your changes.
+
+<img src="/src/images/PR.png">
 
 8. **Review and Feedback:** After submitting your PR, maintainers and other contributors may review your changes and provide feedback. Be ready to address any suggested improvements.
 
 9. **Merge:** Once your PR is approved, it will be merged into the main repository.
+
+
 
 10. **Celebrate:** Your contribution is now part of HacktoberfestProjectsHub! 🎉
 
