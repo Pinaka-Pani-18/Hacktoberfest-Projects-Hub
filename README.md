@@ -47,7 +47,7 @@ We welcome contributions from developers of all backgrounds and experience level
 
 Join our growing community and connect with developers from around the world:
 
-- [Chat Rooms](url-to-chat-rooms)
+- [Chat Rooms](https://discord.gg/YgUySdJC)
 
 ## License
 
