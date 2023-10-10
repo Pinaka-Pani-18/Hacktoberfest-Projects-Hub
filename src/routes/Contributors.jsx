@@ -42,7 +42,7 @@ export const Contributors = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen">
             <h1 className="text-center text-5xl pt-12">Contributors</h1>
             <div className="flex flex-wrap justify-center p-5 gap-8">
                 {error ? (
