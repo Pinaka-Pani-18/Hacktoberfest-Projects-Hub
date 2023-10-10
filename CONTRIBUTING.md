@@ -7,13 +7,14 @@ Before you start, please take a moment to read this guide to understand how you 
 ## How to Contribute
 
 1. **Fork the Repository:** Click the "Fork" button on the top right corner of this repository. This will create a copy of the project in your GitHub account.
+
 <img src="/src/images/CONTRIBUTING/fork.png">
 
-2. **Clone the Repository:** Clone the forked repository to your local machine using the following command (replace `[your-username]` with your GitHub username):
+2. **Clone the Repository:** Once the fork process is completed, you'll be redirected to your forked repository page. Now, clone the forked repository to your local machine using the following command (replace `[your-username]` with your GitHub username):
 
-   ```sh
-   git clone https://github.com/[your-username]/HacktoberfestProjectsHub.git
-   ```
+```sh
+git clone https://github.com/[your-username]/HacktoberfestProjectsHub.git
+```
 <img src="/src/images/CONTRIBUTING/clone.png">
 
 3. **Create a Branch:** Create a new branch for your contributions:
