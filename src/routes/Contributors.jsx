@@ -1,80 +1,72 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 export const Contributors = () => {
-    const [contributors, setContributors] = useState([])
+    const [contributors, setContributors] = useState([]);
+    const [error, setError] = useState(null);
+
+    const owner = "Pinaka-Pani-18";
+    const repo = "Hacktoberfest-Projects-Hub";
 
     useEffect(() => {
-        fetch('https://api.github.com/repos/Pinaka-Pani-18/Hacktoberfest-Projects-Hub/contributors')
-            .then(response => response.json())
-            .then(data => setContributors(data))
-    }, [])
+        const locallyCachedContributors = localStorage.getItem("contributors");
+        if (locallyCachedContributors) {
+            let contributors = JSON.parse(locallyCachedContributors);
+            const currentTimestamp = Math.floor(Date.now() / 1000);
+            const secondsToCache = 7200; // 60 * 60 * 2 => Two hours
+
+            if (contributors.cachedAt + secondsToCache > currentTimestamp)
+                return setContributors(contributors.data);
+        }
+        const fetchData = async () => {
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${owner}/${repo}/contributors`
+                );
+                const data = await response.json();
+                const currentTimestamp = Math.floor(Date.now() / 1000);
+
+                localStorage.setItem(
+                    "contributors",
+                    JSON.stringify({
+                        data: data,
+                        cachedAt: currentTimestamp,
+                    })
+                );
+                setContributors(data);
+            } catch (error) {
+                setError("Error occurred while fetching contributors.");
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
-        <>
-        <div  className="py-40">
-        <div className="contributors-heading">
-            <h1 className='text-4xl mb-16'>Contributors</h1>
-        </div>
-        <div className="contributors">
-            <div className="contributer-profile-container">
-                {contributors.map(contributor => (
-                    <div className="contributor" key={contributor.id}>
-                        <img src={contributor.avatar_url} alt={contributor.login} />
-                            <h3>{contributor.login}</h3>
-                    </div>
-                ))}
+        <div className="min-h-screen">
+            <h1 className="text-center text-5xl pt-12">Contributors</h1>
+            <div className="flex flex-wrap justify-center p-5 gap-8">
+                {error ? (
+                    <h1 className="text-2xl">{error}</h1>
+                ) : (
+                    contributors.map((contributor) => (
+                        <div
+                            onClick={() => window.open(contributor.html_url)}
+                            className="cursor-pointer transform transition-transform hover:scale-110 shadow-sm bg-white rounded-lg p-5"
+                            key={contributor.id}
+                            style={{ width: "200px" }}
+                        >
+                            <img
+                                src={contributor.avatar_url}
+                                alt="Contributor Avatar"
+                                className="w-36 h-36 object-cover mx-auto rounded-full"
+                            />
+                            <p className="text-center font-semibold mt-4">
+                                {contributor.login}
+                            </p>
+                        </div>
+                    ))
+                )}
             </div>
-            <style jsx>{`
-                .contributer-profile-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0 auto;
-                }
-
-                .contributors-heading {
-                    text-align: center;
-                    margin-bottom: 2rem;
-                }
-                .contributors {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                    grid-gap: 1rem;
-                }
-
-                .contributor {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .contributor img {
-                    width: 100%;
-                    max-width: 200px;
-                    height: auto;
-                    border-radius: 50%;
-                    margin-bottom: 0.5rem;
-                }
-
-                @media (max-width: 768px) {
-                    .contributors {
-                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .contributors {
-                        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                    }
-
-                    .contributor img {
-                        max-width: 150px;
-                    }
-                }
-            `}</style>
         </div>
-        </div>
-        </>
-    )
-}
+    );
+};
