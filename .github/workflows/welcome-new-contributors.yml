@@ -25,11 +25,12 @@ jobs:
           script: |
             github.issues.createComment({
               issue_number: github.event.number,
-              body: `Hi @${pr_creator},
+              body: |
+                Hi @${pr_creator},
 
-Thank you for your first contribution to ${github.repository.name}! We appreciate your time and effort.
+                Thank you for your first contribution to ${github.repository.name}! We appreciate your time and effort.
 
-We're excited to have you as part of our community, and we encourage you to continue participating. If you have any questions or need help getting started, please don't hesitate to ask.
+                We're excited to have you as part of our community, and we encourage you to continue participating. If you have any questions or need help getting started, please don't hesitate to ask.
 
-Welcome to the team!`
+                Welcome to the team!
             });
