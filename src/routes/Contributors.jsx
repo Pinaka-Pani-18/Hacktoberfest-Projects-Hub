@@ -11,8 +11,9 @@ export const Contributors = () => {
 
     return (
         <>
+        <div  className="py-40">
         <div className="contributors-heading">
-            <h1>Contributors</h1>
+            <h1 className='text-4xl mb-16'>Contributors</h1>
         </div>
         <div className="contributors">
             <div className="contributer-profile-container">
@@ -72,6 +73,8 @@ export const Contributors = () => {
                     }
                 }
             `}</style>
-        </div></>
+        </div>
+        </div>
+        </>
     )
 }
