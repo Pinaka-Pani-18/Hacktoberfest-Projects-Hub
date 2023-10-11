@@ -13,9 +13,19 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/github-script@main
         if: ${{ github.event.sender.login != github.repository_owner }}
         with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `### Hello @${{ github.actor }}, Thank you for raising the issue.
+
+                Maintainer will soon investigate into the issue and get back to you as soon as possible.`
+            })
+
           github-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |
             ### Hello @${{ github.actor }}, Thank you for raising the issue.
