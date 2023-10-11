@@ -1,0 +1,36 @@
+name: Welcome new contributors
+
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+  issues:
+    types: [opened]
+
+jobs:
+  welcome-contributor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the PR creator
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.event.repository.owner.login;
+          result-variable: pr_creator
+
+      - name: Post a comment on the PR
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.issues.createComment({
+              issue_number: github.event.number,
+              body: |
+                Hi @${pr_creator},
+
+                Thank you for your first contribution to ${github.repository.name}! We appreciate your time and effort.
+
+                We're excited to have you as part of our community, and we encourage you to continue participating. If you have any questions or need help getting started, please don't hesitate to ask.
+
+                Welcome to the team!
+            });
