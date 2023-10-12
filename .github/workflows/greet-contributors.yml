@@ -22,7 +22,7 @@ jobs:
               repo: context.repo.repo,
               body: `### Hello @${{ github.actor }}, Thank you for raising the issue.
 
-                Maintainer will soon investigate into the issue and get back to you as soon as possible.`
+                Soon the maintainers/owner will review it and offer feedback and suggestions. If you enjoy contributing to the project, please consider giving it a star ⭐.`
             })
   welcome-pull_request:
     permissions: write-all
@@ -39,6 +39,6 @@ jobs:
               repo: context.repo.repo,
               body: `### Hello @${{ github.actor }}, Thank you for raising a pull request.
 
-                Please make sure you have filled the PR template properly and followed our contributing guidelines.`
+                Soon the maintainers/owner will review it and offer feedback and suggestions. If you enjoy contributing to the project, please consider giving it a star ⭐.`
             })
 
