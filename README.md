@@ -1,3 +1,4 @@
+![banner](./src/assets/projectshub.png)
 # Hacktoberfest Projects Hub
 
 ![Hacktoberfest Projects Hub Logo](./src/assets/logo_github_project_hub.png)
