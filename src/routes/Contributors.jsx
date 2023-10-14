@@ -44,7 +44,7 @@ export const Contributors = () => {
     return (
         <div className="min-h-screen mt-20">
             <h1 className="text-center text-7xl pt-12 font-bold text-[#1f2937]">Contributors</h1>
-            <div className="flex flex-wrap justify-center gap-8 p-20">
+            <div className="flex flex-wrap justify-center gap-8 px-20 py-12">
                 {error ? (
                     <h1 className="text-2xl">{error}</h1>
                 ) : (
