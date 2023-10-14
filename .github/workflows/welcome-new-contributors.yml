@@ -13,24 +13,28 @@ jobs:
 
     steps:
       - name: Get the PR creator
-        uses: actions/github-script@v5
-        with:
-          script: |
-            github.event.repository.owner.login;
-          result-variable: pr_creator
-
+        id: get_creator
+        if: github.event != null && github.event.number != null && github.event.repository != null
+        run: |
+          echo "PR creator: ${{ github.event.repository.owner.login }}"
+        continue-on-error: true
+        
       - name: Post a comment on the PR
+        if: steps.get_creator.outputs.result != 'undefined' && github.event != null && github.event.number != null && github.event.repository != null
         uses: actions/github-script@v5
         with:
           script: |
             github.issues.createComment({
               issue_number: github.event.number,
               body: |
-                Hi @${pr_creator},
+                Hi @${{ steps.get_creator.outputs.result }},
 
-                Thank you for your first contribution to ${github.repository.name}! We appreciate your time and effort.
+                Thank you for your first contribution to ${github.event.repository.name}! We appreciate your time and effort.
 
                 We're excited to have you as part of our community, and we encourage you to continue participating. If you have any questions or need help getting started, please don't hesitate to ask.
 
                 Welcome to the team!
             });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
